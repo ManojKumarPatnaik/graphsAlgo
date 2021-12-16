@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 fifth commit is cherry-pick to master branch
 sixth commit is revert
@@ -7,6 +8,10 @@ sixth commit is revert
 
 
 
+=======
+fifth commit for cherry-pick to master
+sixth commit for revert`
+>>>>>>> b56b16d (fifth commit for cherry-pick)
 
 
 
