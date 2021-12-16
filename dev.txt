@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 fifth commit is cherry-pick to master branch
 sixth commit is revert
@@ -18,6 +19,11 @@ second additional commit is added.
 
 
 
+=======
+adding two additional commits
+<<<<<<< HEAD
+second additional commit is added.
+>>>>>>> b3992e8044aa11e3463d99434fcb3c80391d0973
 =======
 
 >>>>>>> d9cc2c9 (First additional commit)
