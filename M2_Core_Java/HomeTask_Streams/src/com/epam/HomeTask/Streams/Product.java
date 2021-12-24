@@ -1,24 +1,62 @@
 package com.epam.HomeTask.Streams;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.TreeMap;
-import java.util.stream.Collectors;
-
 public class Product {
-	String name;
-	int price;
-	String grade;
-	String category;
-	public static String ProductName(String name) {
-	ArrayList<String> list=new ArrayList<String>();
-	list.add("Iphone");
-	return name;
+
+	protected String name;
+	protected int price;
+	protected String grade;
+	protected String category;
+
+	public Product() {
+		
 	}
-	Map<String,Integer> categoryPrice=new TreeMap<>();
-//	categoryPrice.put("Electronics",1200);
-//	categoryPrice.put(
-//	List<Integer> l1=l.Streams.filter(i->i%2==0).collect(Collectors.toList());
+
+	public Product(String name, int price, String grade, String category) {
+		
+		this.name = name;
+		this.price = price;
+		this.grade = grade;
+		this.category = category;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public int getPrice() {
+		return price;
+	}
+
+	public void setPrice(int price) {
+		this.price = price;
+	}
+
+	public String getGrade() {
+		return grade;
+	}
+
+	public void setGrade(String grade) {
+		this.grade = grade;
+	}
+
+	public String getCategory() {
+		return category;
+	}
+
+	public void setCategory(String category) {
+		this.category = category;
+	}
+
+	@Override
+	public String toString() {
+		String result = "Name is " + this.name + "Price " + this.price + "Category " + this.category + "Grade "
+				+ this.grade;
+
+		return result;
+	}
 
 }
