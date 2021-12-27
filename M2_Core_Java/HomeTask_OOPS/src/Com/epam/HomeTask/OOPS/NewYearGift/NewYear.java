@@ -9,11 +9,13 @@ public class NewYear {
 				
 		Scanner scan=new Scanner(System.in);	
 		
-		System.out.println("Enter the name of the customer : ");
+		NewYearImplementation object=new NewYearImplementation();
+		object.display();
 		String CustomerName=scan.nextLine();
+		object.setCustomer(CustomerName);
 		System.out.println("Choose any one chocolate or sweet : ");
 		String gift=scan.next();
-		System.out.println(CustomerName+" wants "+gift);
+		System.out.println(object.getCustomer().toUpperCase()+" CHOOSEN "+gift.toUpperCase());
 		gift=gift.toLowerCase();
 		scan.close();
 		if(gift.equalsIgnoreCase("chocolate")) {

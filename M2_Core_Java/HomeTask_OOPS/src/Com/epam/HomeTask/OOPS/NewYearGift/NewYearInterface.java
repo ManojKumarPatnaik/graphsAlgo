@@ -5,7 +5,7 @@ public interface NewYearInterface {
 public void display();
 }
 
-class NewYearImplementation extends NewYear implements NewYearInterface {
+ class NewYearImplementation implements NewYearInterface {
 	private String customer;
 
 	public String getCustomer() {
@@ -19,7 +19,7 @@ class NewYearImplementation extends NewYear implements NewYearInterface {
 	@Override
 	public void display() {
 		
-		
+		System.out.println("Enter the name of the customer : ");
 		
 	}
 	

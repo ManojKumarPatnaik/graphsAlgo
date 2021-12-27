@@ -8,11 +8,11 @@ public class Product {
 	protected String category;
 
 	public Product() {
-		
+
 	}
 
 	public Product(String name, int price, String grade, String category) {
-		
+
 		this.name = name;
 		this.price = price;
 		this.grade = grade;
