@@ -1,0 +1,40 @@
+[DEBUG] 2021-12-28 20:30:33.011 [main] Log4jDemo - Inside the Main()
+[INFO ] 2021-12-28 20:30:33.013 [main] Log4jDemo - Info
+[WARN ] 2021-12-28 20:30:33.014 [main] Log4jDemo - Warn
+[FATAL] 2021-12-28 20:30:33.014 [main] Log4jDemo - fatal
+[ERROR] 2021-12-28 20:30:33.014 [main] Log4jDemo - Error
+[DEBUG] 2021-12-28 20:32:39.941 [main] Log4jDemo - This is debug Method
+[INFO ] 2021-12-28 20:32:39.943 [main] Log4jDemo - This is info Method
+[WARN ] 2021-12-28 20:32:39.943 [main] Log4jDemo - This is warn Method
+[FATAL] 2021-12-28 20:32:39.943 [main] Log4jDemo - This is fatal Method
+[ERROR] 2021-12-28 20:32:39.944 [main] Log4jDemo - This is error Method
+[TRACE] 2021-12-28 20:34:32.129 [main] Log4jDemo - This is Trace Method
+[DEBUG] 2021-12-28 20:34:32.134 [main] Log4jDemo - This is debug Method
+[INFO ] 2021-12-28 20:34:32.134 [main] Log4jDemo - This is info Method
+[WARN ] 2021-12-28 20:34:32.134 [main] Log4jDemo - This is warn Method
+[FATAL] 2021-12-28 20:34:32.134 [main] Log4jDemo - This is fatal Method
+[ERROR] 2021-12-28 20:34:32.134 [main] Log4jDemo - This is error Method
+[TRACE] 2021-12-28 20:35:17.028 [main] Log4jDemo - This is Trace Method
+[DEBUG] 2021-12-28 20:35:17.031 [main] Log4jDemo - This is debug Method
+[INFO ] 2021-12-28 20:35:17.031 [main] Log4jDemo - This is info Method
+[WARN ] 2021-12-28 20:35:17.031 [main] Log4jDemo - This is warn Method
+[FATAL] 2021-12-28 20:35:17.031 [main] Log4jDemo - This is fatal Method
+[ERROR] 2021-12-28 20:35:17.031 [main] Log4jDemo - This is error Method
+[TRACE] 2021-12-28 23:06:06.544 [main] Log4jDemo - This is Trace Method
+[DEBUG] 2021-12-28 23:06:06.547 [main] Log4jDemo - This is debug Method
+[INFO ] 2021-12-28 23:06:06.547 [main] Log4jDemo - This is info Method
+[WARN ] 2021-12-28 23:06:06.547 [main] Log4jDemo - This is warn Method
+[FATAL] 2021-12-28 23:06:06.547 [main] Log4jDemo - This is fatal Method
+[ERROR] 2021-12-28 23:06:06.547 [main] Log4jDemo - This is error Method
+[TRACE] 2021-12-28 23:07:04.994 [main] Log4jDemo - This is Trace Method
+[DEBUG] 2021-12-28 23:07:04.997 [main] Log4jDemo - This is debug Method
+[INFO ] 2021-12-28 23:07:04.997 [main] Log4jDemo - This is info Method
+[WARN ] 2021-12-28 23:07:04.997 [main] Log4jDemo - This is warn Method
+[FATAL] 2021-12-28 23:07:04.997 [main] Log4jDemo - This is fatal Method
+[ERROR] 2021-12-28 23:07:04.998 [main] Log4jDemo - This is error Method
+[FATAL] 2021-12-28 23:07:33.692 [main] Log4jDemo - This is fatal Method
+[ERROR] 2021-12-28 23:07:33.695 [main] Log4jDemo - This is error Method
+[FATAL] 2021-12-28 23:08:28.430 [main] Log4jDemo - This is fatal Method
+[ERROR] 2021-12-28 23:08:28.432 [main] Log4jDemo - This is error Method
+[FATAL] 2021-12-28 23:13:51.210 [main] Log4jDemo - This is fatal Method
+[ERROR] 2021-12-28 23:13:51.213 [main] Log4jDemo - This is error Method
