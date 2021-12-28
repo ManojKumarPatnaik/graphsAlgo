@@ -6,15 +6,16 @@ public void display();
 }
 
  class NewYearImplementation implements NewYearInterface {
-	private String customer;
+	private String customerName;
 
-	public String getCustomer() {
-		return customer;
+	public String getCustomerName() {
+		return customerName;
 	}
 
-	public void setCustomer(String customer) {
-		this.customer = customer;
+	public void setCustomerName(String customerName) {
+		this.customerName = customerName;
 	}
+
 
 	@Override
 	public void display() {

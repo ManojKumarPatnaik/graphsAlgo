@@ -1,6 +1,6 @@
 package Com.epam.HomeTask.OOPS.NewYearGift;
 
-public class Gift {
+public abstract class Gift {
 
 	public int sumOfTheQuantity(int sum) {
 

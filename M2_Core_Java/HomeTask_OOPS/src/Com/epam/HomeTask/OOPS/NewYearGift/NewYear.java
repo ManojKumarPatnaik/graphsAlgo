@@ -12,10 +12,10 @@ public class NewYear {
 		NewYearImplementation object=new NewYearImplementation();
 		object.display();
 		String CustomerName=scan.nextLine();
-		object.setCustomer(CustomerName);
+		object.setCustomerName(CustomerName);
 		System.out.println("Choose any one chocolate or sweet : ");
 		String gift=scan.next();
-		System.out.println(object.getCustomer().toUpperCase()+" CHOOSEN "+gift.toUpperCase());
+		System.out.println(object.getCustomerName().toUpperCase()+" CHOOSEN "+gift.toUpperCase());
 		gift=gift.toLowerCase();
 		scan.close();
 		if(gift.equalsIgnoreCase("chocolate")) {
