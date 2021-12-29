@@ -19,6 +19,8 @@ public class TreeMapDescNames {
 		for (Map.Entry<String, Integer> itr : treemap.entrySet()) {
 			list.add(itr.getKey());
 		}
+//		Collections.sort(list,Comparator.reverseOrder());
+//		System.out.println("Without Lambda"+list);
 		Collections.sort(list, (s1, s2) -> s2.compareTo(s1));
 		for (String st : list) {
 			for (Map.Entry<String, Integer> entry : treemap.entrySet()) {

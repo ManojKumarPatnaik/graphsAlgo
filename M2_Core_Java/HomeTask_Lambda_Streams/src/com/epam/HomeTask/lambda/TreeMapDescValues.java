@@ -1,7 +1,6 @@
 package com.epam.HomeTask.lambda;
 
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.Map;
 import java.util.TreeMap;
@@ -19,7 +18,11 @@ public class TreeMapDescValues {
 		for (Map.Entry<String, Integer> itr : treemap.entrySet()) {
 			list.add(itr.getValue());
 		}
-		Collections.sort(list, Comparator.reverseOrder());
+		
+//		Collections.sort(list,Comparator.reverseOrder());
+//		System.out.println("Without Lambda"+list);
+		Collections.sort(list, (i1,i2)-> i2.compareTo(i1));
+		
 		for (Integer itr : list) {
 			for (Map.Entry<String, Integer> entry : treemap.entrySet()) {
 				if (entry.getValue().equals(itr)) {

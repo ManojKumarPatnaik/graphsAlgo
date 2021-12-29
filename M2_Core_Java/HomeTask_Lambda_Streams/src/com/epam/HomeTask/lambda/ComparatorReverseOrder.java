@@ -1,7 +1,7 @@
 package com.epam.HomeTask.lambda;
 
 import java.util.ArrayList;
-import java.util.Comparator;
+import java.util.Collections;
 import java.util.List;
 
 public class ComparatorReverseOrder {
@@ -13,8 +13,11 @@ public class ComparatorReverseOrder {
 		list.add(30);
 		list.add(70);
 		list.add(190);
-		list.sort(Comparator.reverseOrder());
-		System.out.println(list);
+		
+		Collections.sort(list,(s1,s2)->s2.compareTo(s1));
+		System.out.println("With Lambda Expression = "+list);
+		Collections.sort(list,Collections.reverseOrder());
+		System.out.println("Without Lambda Expression = "+list);
 		
 
 	}

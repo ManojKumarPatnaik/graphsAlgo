@@ -14,8 +14,10 @@ public class CollectionsSort {
 		list.add("Uriti");
 		list.add("Patnaik");
 		list.add("Anonymous");
+		Collections.sort(list,(s1,s2)->s2.compareTo(s1));
+		System.out.println("With Lambda Expression = "+list);
 		Collections.sort(list,Collections.reverseOrder());
-		System.out.println(list);
+		System.out.println("Without Lambda Expression = "+list);
 	}
 
 }

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration monitorInterval="60">
+	<Properties>
+		<Property name="log-path">logs</Property>
+		<Property name="archive">${log-path}/archive</Property>
+	</Properties>
+	<Appenders>
+		<Console name="Console-Appender" target="SYSTEM_OUT">
+			<PatternLayout>
+				<pattern>
+                [%-5level] %d{dd-MM-yyyy HH:mm:ss} [%t] %c{1} - %msg%n
+            </pattern>
+				>
+			</PatternLayout>
+		</Console>
+		<File name="File-Appender" fileName="${log-path}/xmlfilelog.log">
+			<PatternLayout>
+				<pattern>
+                [%-5level] %d{dd-MM-yyyy HH:mm:ss} [%t] %c{1} - %msg%n
+            </pattern>
+			</PatternLayout>
+		</File>
+	</Appenders>
+	<Loggers>
+		<Logger name="com.epam.HomeTask.Loggers_By_XML" level="trace">
+			<AppenderRef ref="File-Appender" level="trace" />
+		</Logger>
+		<Root level="trace">
+			<AppenderRef ref="Console-Appender" level="trace"/>
+		</Root>
+	</Loggers>
+</Configuration>

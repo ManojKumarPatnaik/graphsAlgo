@@ -1,0 +1,56 @@
+[FATAL] 2021-12-29 14:52:03.947 [main] LoggersByXml - This is fatal Method
+[ERROR] 2021-12-29 14:52:03.948 [main] LoggersByXml - This is error Method
+[FATAL] 2021-12-29 14:53:54.442 [main] LoggersByXml - This is fatal Method
+[ERROR] 2021-12-29 14:53:54.442 [main] LoggersByXml - This is error Method
+[DEBUG] 2021-12-29 14:55:10.753 [main] LoggersByXml - This is debug Method
+[INFO ] 2021-12-29 14:55:10.757 [main] LoggersByXml - This is info Method
+[WARN ] 2021-12-29 14:55:10.757 [main] LoggersByXml - This is warn Method
+[FATAL] 2021-12-29 14:55:10.757 [main] LoggersByXml - This is fatal Method
+[ERROR] 2021-12-29 14:55:10.759 [main] LoggersByXml - This is error Method
+[DEBUG] 2021-12-29 14:55:49.948 [main] LoggersByXml - This is debug Method
+[INFO ] 2021-12-29 14:55:49.952 [main] LoggersByXml - This is info Method
+[WARN ] 2021-12-29 14:55:49.952 [main] LoggersByXml - This is warn Method
+[FATAL] 2021-12-29 14:55:49.952 [main] LoggersByXml - This is fatal Method
+[ERROR] 2021-12-29 14:55:49.952 [main] LoggersByXml - This is error Method
+[TRACE] 2021-12-29 14:56:17.841 [main] LoggersByXml - This is Trace Method
+[DEBUG] 2021-12-29 14:56:17.846 [main] LoggersByXml - This is debug Method
+[INFO ] 2021-12-29 14:56:17.846 [main] LoggersByXml - This is info Method
+[WARN ] 2021-12-29 14:56:17.846 [main] LoggersByXml - This is warn Method
+[FATAL] 2021-12-29 14:56:17.846 [main] LoggersByXml - This is fatal Method
+[ERROR] 2021-12-29 14:56:17.847 [main] LoggersByXml - This is error Method
+[TRACE] 2021-12-29 15:21:48.527 [main] LoggersByXml - This is Trace Method
+[DEBUG] 2021-12-29 15:21:48.534 [main] LoggersByXml - This is debug Method
+[INFO ] 2021-12-29 15:21:48.534 [main] LoggersByXml - This is info Method
+[WARN ] 2021-12-29 15:21:48.534 [main] LoggersByXml - This is warn Method
+[FATAL] 2021-12-29 15:21:48.535 [main] LoggersByXml - This is fatal Method
+[ERROR] 2021-12-29 15:21:48.535 [main] LoggersByXml - This is error Method
+[TRACE] 2021-12-29 15:22:38.873 [main] LoggersByXml - This is Trace Method
+[DEBUG] 2021-12-29 15:22:38.877 [main] LoggersByXml - This is debug Method
+[INFO ] 2021-12-29 15:22:38.877 [main] LoggersByXml - This is info Method
+[WARN ] 2021-12-29 15:22:38.877 [main] LoggersByXml - This is warn Method
+[FATAL] 2021-12-29 15:22:38.877 [main] LoggersByXml - This is fatal Method
+[ERROR] 2021-12-29 15:22:38.878 [main] LoggersByXml - This is error Method
+[TRACE] 2021-12-29 15:22:57.192 [main] LoggersByXml - This is Trace Method
+[DEBUG] 2021-12-29 15:22:57.196 [main] LoggersByXml - This is debug Method
+[INFO ] 2021-12-29 15:22:57.197 [main] LoggersByXml - This is info Method
+[WARN ] 2021-12-29 15:22:57.197 [main] LoggersByXml - This is warn Method
+[FATAL] 2021-12-29 15:22:57.197 [main] LoggersByXml - This is fatal Method
+[ERROR] 2021-12-29 15:22:57.197 [main] LoggersByXml - This is error Method
+[TRACE] 29-12-2021 15:23:24.617 [main] LoggersByXml - This is Trace Method
+[DEBUG] 29-12-2021 15:23:24.623 [main] LoggersByXml - This is debug Method
+[INFO ] 29-12-2021 15:23:24.624 [main] LoggersByXml - This is info Method
+[WARN ] 29-12-2021 15:23:24.624 [main] LoggersByXml - This is warn Method
+[FATAL] 29-12-2021 15:23:24.624 [main] LoggersByXml - This is fatal Method
+[ERROR] 29-12-2021 15:23:24.625 [main] LoggersByXml - This is error Method
+[TRACE] 29-12-2021 15:23:41.392 [main] LoggersByXml - This is Trace Method
+[DEBUG] 29-12-2021 15:23:41.404 [main] LoggersByXml - This is debug Method
+[INFO ] 29-12-2021 15:23:41.405 [main] LoggersByXml - This is info Method
+[WARN ] 29-12-2021 15:23:41.406 [main] LoggersByXml - This is warn Method
+[FATAL] 29-12-2021 15:23:41.407 [main] LoggersByXml - This is fatal Method
+[ERROR] 29-12-2021 15:23:41.407 [main] LoggersByXml - This is error Method
+[TRACE] 29-12-2021 15:24:16 [main] LoggersByXml - This is Trace Method
+[DEBUG] 29-12-2021 15:24:16 [main] LoggersByXml - This is debug Method
+[INFO ] 29-12-2021 15:24:16 [main] LoggersByXml - This is info Method
+[WARN ] 29-12-2021 15:24:16 [main] LoggersByXml - This is warn Method
+[FATAL] 29-12-2021 15:24:16 [main] LoggersByXml - This is fatal Method
+[ERROR] 29-12-2021 15:24:16 [main] LoggersByXml - This is error Method
