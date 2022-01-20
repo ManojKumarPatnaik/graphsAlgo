@@ -9,20 +9,21 @@ import javax.persistence.Persistence;
 
 import org.apache.logging.log4j.LogManager;
 
-import com.epam.pmt.databaselayer.AccountDataBase;
 import com.epam.pmt.entity.MasterUser;
+import com.epam.pmt.exceptions.AccountDoesNotExistException;
 import com.epam.pmt.exceptions.PasswordMismatchException;
-import com.epam.pmt.interfaceimplemetation.DeleteAccountByGroupName;
-import com.epam.pmt.interfaceimplemetation.DeleteAccountByUrl;
-import com.epam.pmt.interfaceimplemetation.ListPasswordAccountAndGroup;
-import com.epam.pmt.interfaceimplemetation.ModifyGroupDetails;
-import com.epam.pmt.interfaceimplemetation.ModifyPassword;
-import com.epam.pmt.interfaceimplemetation.ModifyUrl;
-import com.epam.pmt.interfaceimplemetation.ReadingPassword;
-import com.epam.pmt.interfaces.CreateAccountInterface;
-import com.epam.pmt.interfaces.ListPasswordAccountInterface;
-import com.epam.pmt.interfaces.ReadPasswordInterface;
+import com.epam.pmt.exceptions.WrongPasswordException;
 import com.epam.pmt.mainapp.Main;
+import com.epam.pmt.persistencelayer.CreateAccountInterface;
+import com.epam.pmt.persistencelayer.DeleteAccountByGroupName;
+import com.epam.pmt.persistencelayer.DeleteAccountByUrl;
+import com.epam.pmt.persistencelayer.ListPasswordAccountAndGroup;
+import com.epam.pmt.persistencelayer.ListPasswordAccountInterface;
+import com.epam.pmt.persistencelayer.ModifyGroupDetails;
+import com.epam.pmt.persistencelayer.ModifyPassword;
+import com.epam.pmt.persistencelayer.ModifyUrl;
+import com.epam.pmt.persistencelayer.ReadPassword;
+import com.epam.pmt.persistencelayer.ReadPasswordInterface;
 import com.epam.pmt.persistencemanager.CrudOperations;
 import com.epam.pmt.validation.ValidateUserName;
 import com.epam.pmt.validation.ValidationPassword;
@@ -37,7 +38,7 @@ public class DisplayMenuDetails {
 		try {
 			@SuppressWarnings("resource")
 			Scanner scanner = new Scanner(System.in);
-			AccountDataBase data = new AccountDataBase();
+//			AccountDataBase data = new AccountDataBase();
 			MasterUser master = new MasterUser();
 			while (true) {
 				logger.info("Enter number for Respective Operation");
@@ -83,8 +84,10 @@ public class DisplayMenuDetails {
 					logger.info("User Name " + username2 + " Password");
 					
 
-					if (username2.equals(master.getUsername())) {
-						if (password2.equals(master.getPassword())) {
+//					if (username2.equals(master.getUsername())) {
+//						if (password2.equals(master.getPassword())) {
+					if(new ValidateUserName().isValidUserName(username2)==true) {
+						if(new ValidationPassword().validPassword(password2) == true) {
 							new CrudOperations().getAllUsers().stream().filter(account->account.getUsername().equals(username2)&&account.getPassword().equals(password2))
 							.collect(Collectors.toList()).get(0);
 							logger.info("Logined successfully");
@@ -108,28 +111,28 @@ public class DisplayMenuDetails {
 										switch (option2) {
 										case 1:
 											CreateAccountInterface create = new CreateAccount();
-											create.accountService(data);
+											create.accountService();
 											
 											break;
 										case 2:
-											ReadPasswordInterface readingPassword = new ReadingPassword();
+											ReadPasswordInterface readingPassword = new ReadPassword();
 											System.out.println("Enter account url");
 											String accountUrl = scanner.next();
 											System.out.println("Enter user name");
 											String accountUsername = scanner.next();
-											(readingPassword).getPassword(data, accountUrl, accountUsername);
+											(readingPassword).getPassword( accountUrl, accountUsername);
 											break;
 										case 3:
 											ListPasswordAccountInterface listPasswordAccountAndGroup = new ListPasswordAccountAndGroup();
 											System.out.println("Enter group:");
 											String group = scanner.next();
-											listPasswordAccountAndGroup.getAccountByGroupName(data, group);
+											listPasswordAccountAndGroup.getAccountByGroupName(group);
 											break;
 										case 4:
 											DeleteAccountByUrl deleteAccountByUrl = new DeleteAccountByUrl();
 											System.out.println("Enter Account Url to delete password account");
 											String url = scanner.next();
-											deleteAccountByUrl.deleteAccountByUrl(data, url);
+											deleteAccountByUrl.deleteAccountByUrl( url);
 											break;
 										case 5:
 											int option5;
@@ -145,14 +148,14 @@ public class DisplayMenuDetails {
 													System.out.println("Enter the new Password");
 													String newpassword = scanner.next();
 													ModifyPassword modifyPassword = new ModifyPassword();
-													modifyPassword.modifyPassword(data, url1, newpassword);
+													modifyPassword.modifyPassword( url1, newpassword);
 												} else if (option5 == 2) {
 													System.out.println("Enter url");
 													String url1 = scanner.next();
 													System.out.println("Enter new url");
 													String newUrl1 = scanner.next();
 													ModifyUrl modifyUrl = new ModifyUrl();
-													modifyUrl.modifyUrl(data, url1, newUrl1);
+													modifyUrl.modifyUrl( url1, newUrl1);
 												} else {
 													break;
 												}
@@ -164,13 +167,14 @@ public class DisplayMenuDetails {
 											String group1 = scanner.next();
 											System.out.println("Enter new group name ");
 											String newGroup = scanner.next();
-											modifyGroupDetails.modifyGroupDetails(data, group1, newGroup);
+											modifyGroupDetails.modifyGroupDetails( group1, newGroup);
 											break;
 										case 7:
 											DeleteAccountByGroupName deleteAccountByGroupName = new DeleteAccountByGroupName();
 											System.out.println("Enter old group name ");
 											String groupName = scanner.next();
-											deleteAccountByGroupName.deleteAccountByGroup(data, groupName);
+//											deleteAccountByGroupName.deleteAccountByGroup(data, groupName);
+											deleteAccountByGroupName.deleteAccountByGroup( groupName);
 											break;
 
 										}
@@ -181,15 +185,21 @@ public class DisplayMenuDetails {
 								logger.warn("Invalid type..." + e);
 							}
 
-						} else
+						} else {
 							logger.warn("Invalid Password");
-					} else
+							throw new WrongPasswordException("Oops! Password does not matched!!");
+						}
+					} else {
 						logger.warn("Invalid username");
+						throw new  AccountDoesNotExistException("Oops! No Account Found!!");
+					}
+					
 					break;
 				}
 
-				if (option == 3)
+				if (option == 3) {
 					break;
+				}
 
 			}
 			logger.debug("Exited Successfully from application");
@@ -197,6 +207,7 @@ public class DisplayMenuDetails {
 
 		catch (Exception e) {
 			logger.warn("Invalid type...");
+			
 		}
 	}
 

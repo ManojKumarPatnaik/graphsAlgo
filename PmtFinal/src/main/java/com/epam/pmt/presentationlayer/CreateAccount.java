@@ -2,23 +2,16 @@ package com.epam.pmt.presentationlayer;
 
 import java.util.Scanner;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
-
-import com.epam.pmt.databaselayer.AccountDataBase;
 import com.epam.pmt.entity.Account;
-import com.epam.pmt.interfaceimplemetation.CreateAccountDetails;
-import com.epam.pmt.interfaces.CreateAccountInterface;
+import com.epam.pmt.persistencelayer.CreateAccountDetails;
+import com.epam.pmt.persistencelayer.CreateAccountInterface;
 import com.epam.pmt.validation.ValidateUserName;
 import com.epam.pmt.validation.ValidationPassword;
 import com.epam.pmt.validation.ValidationUrl;
 
 public class CreateAccount implements CreateAccountInterface {
-//	public static EntityManagerFactory emFactory = Persistence.createEntityManagerFactory("my-mysql-unit");
-//	private static EntityManager emanager=emFactory.createEntityManager();
 
-	public void accountService(AccountDataBase data) {
+	public void accountService() {
 		@SuppressWarnings("resource")
 		Scanner scanner = new Scanner(System.in);
 		ValidationUrl validateUrl = new ValidationUrl();
@@ -47,9 +40,6 @@ public class CreateAccount implements CreateAccountInterface {
 		Account account = new Account(url, userName, password, group);
 		CreateAccountDetails createAccountService=new CreateAccountDetails();
 		createAccountService.add(account);
-//		emanager.getTransaction().begin();
-//		emanager.persist(account);
-//		emanager.getTransaction().commit();
 		System.out.println("Account added successfully");
 
 	}

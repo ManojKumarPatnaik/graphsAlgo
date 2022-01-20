@@ -7,7 +7,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-import javax.persistence.TableGenerator;
 
 import com.epam.pmt.encryptdecryptpassword.EncryptDecryptPassword;
 
@@ -112,103 +111,10 @@ public class Account {
 		EncryptDecryptPassword obj = new EncryptDecryptPassword();
 		return obj.Decrypt(this.password);
 	}
+	public String getEncryptedPassword() {
+		EncryptDecryptPassword obj = new EncryptDecryptPassword();
+		return obj.Encrypt(this.password);
+	}
 	
-	
-	
-	
-
-//	@Id
-////	@GeneratedValue(strategy = GenerationType.IDENTITY)
-////	@Column(name = "ID")
-//	@TableGenerator(name="TABLE_GEN",table="T_GENERATOR",pkColumnName="GEN_KEY",pkColumnValue="TEST",valueColumnName="GEN_VALUE",initialValue=1,allocationSize=1)
-//	@GeneratedValue(strategy=GenerationType.TABLE, generator="TABLE_GEN")
-//	private int id;
-//	@ManyToOne(targetEntity = MasterUser.class)
-//	private MasterUser masterUser; 
-//
-//
-//	@Column(name = "URL_Address", length = 64)
-//	private String url;
-//	
-//
-//	@Column(name = "User_Name", length = 64)
-//	private String username;
-//	@Column(name = "Password", length = 64)
-//	private String password;
-//
-//	@Column(name = "Group")
-//	private String group;
-//	public MasterUser getMasterUser() {
-//		return masterUser;
-//	}
-//	public Account() {
-//		super();
-//		// TODO Auto-generated constructor stub
-//	}
-//	
-//	public void setMasterUser(MasterUser masterUser) {
-//		this.masterUser = masterUser;
-//	}
-//	@Override
-//	public String toString() {
-//		return "Account [id=" + id + ", masterUser=" + masterUser + ", url=" + url + ", username=" + username
-//				+ ", password=" + password + ", group=" + group + "]";
-//	}
-//
-//	public Account(String url, String username, String password, String group) {
-//		this.url = url;
-//		this.username = username;
-////		EncryptDecryptPassword obj = new EncryptDecryptPassword();
-//		this.password = password;
-////				obj.Encrypt(password);
-//		this.group = group;
-//	}
-//
-//	public int getId() {
-//		return id;
-//	}
-//
-//	public void setId(int id) {
-//		this.id = id;
-//	}
-//
-//	public String getUrl() {
-//		return url;
-//	}
-//
-//	public void setUrl(String url) {
-//		this.url = url;
-//	}
-//
-//	public String getUsername() {
-//		return username;
-//	}
-//
-//	public void setUsername(String username) {
-//		this.username = username;
-//	}
-//
-//	public String getPassword() {
-//		return password;
-//	}
-//
-//	public void setPassword(String password) {
-//		EncryptDecryptPassword obj = new EncryptDecryptPassword();
-//
-//		this.password = obj.Encrypt(password);
-//	}
-//
-//	public String getGroup() {
-//		return group;
-//	}
-//
-//	public void setGroup(String group) {
-//		this.group = group;
-//	}
-//
-//	public String getDecryptedPassword() {
-//		EncryptDecryptPassword obj = new EncryptDecryptPassword();
-//		return obj.Decrypt(this.password);
-//	}
 
 }

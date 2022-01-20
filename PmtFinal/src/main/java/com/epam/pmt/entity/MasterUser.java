@@ -10,7 +10,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.persistence.TableGenerator;
 
 @Entity
 @Table(name = "Master_User_Details")
@@ -71,6 +70,17 @@ public class MasterUser {
 	}
 	public String getPassword() {
 		return password;
+	}
+	@Override
+	public String toString() {
+		return "MasterUser [userid=" + userid +  ", username=" + username + ", password="
+				+ password + "]";
+	}
+
+	public MasterUser(String username, String password) {
+		super();
+		this.username = username;
+		this.password = password;
 	}
 
 	public void setPassword(String password) {
