@@ -13,7 +13,7 @@ import org.junit.jupiter.api.Test;
 import com.epam.pmt.businesslogiclayer.ModifyPasswordAccount;
 import com.epam.pmt.entity.Account;
 import com.epam.pmt.exceptions.InvalidUrlException;
-import com.epam.pmt.persistencelayer.ModifyPassword;
+import com.epam.pmt.servicelayer.ModifyPassword;
 
 public class ModifyPasswordAccountTestCases {
 

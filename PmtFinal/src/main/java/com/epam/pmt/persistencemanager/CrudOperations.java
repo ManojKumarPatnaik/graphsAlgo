@@ -8,10 +8,11 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
 import org.apache.logging.log4j.LogManager;
+import org.springframework.stereotype.Repository;
 
 import com.epam.pmt.entity.Account;
 import com.epam.pmt.entity.MasterUser;
-
+@Repository
 public class CrudOperations {
 	private static final org.apache.logging.log4j.Logger logger = LogManager.getLogger(CrudOperations.class);
 

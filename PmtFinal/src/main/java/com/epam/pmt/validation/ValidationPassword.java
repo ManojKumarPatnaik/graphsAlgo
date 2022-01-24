@@ -1,5 +1,8 @@
 package com.epam.pmt.validation;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class ValidationPassword {
 	public boolean validPassword(String password) {
 		try {

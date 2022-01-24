@@ -3,6 +3,8 @@ package com.epam.pmt.validation;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import org.springframework.stereotype.Component;
+@Component
 public class ValidationUrl {
 	public boolean isValidURL(String url) {
 		// Regex to check valid URL

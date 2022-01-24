@@ -8,10 +8,18 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
+
 import com.epam.pmt.encryptdecryptpassword.EncryptDecryptPassword;
+import com.epam.pmt.mainapp.Main;
 
 @Entity
 @Table(name = "Account_Table")
+@Component
+@Scope(value="prototype")
 public class Account {
 	
 	
@@ -33,15 +41,10 @@ public class Account {
 		super();
 		this.url = url;
 		this.username = username;
-		EncryptDecryptPassword obj = new EncryptDecryptPassword();
-		this.password = obj.Encrypt(password);
+		this.password = password;
 		this.group = group;
 	}
 
-	@Override
-	public String toString() {
-		return "Account [url=" + url + ", userName=" + username + ", password=" + password + ", group=" + group + "]";
-	}
 
 	public String getUrl() {
 		return url;
@@ -106,15 +109,17 @@ public class Account {
 	this.group = group;
 	}
 
+	@Override
+	public String toString() {
+		return "Account [url=" + url + ", userName=" + username + ", password=" + password + ", group=" + group + "]";
+	}
 
+	@SuppressWarnings("resource")
 	public String getDecryptedPassword() {
-		EncryptDecryptPassword obj = new EncryptDecryptPassword();
-		return obj.Decrypt(this.password);
+		ApplicationContext context=new AnnotationConfigApplicationContext(Main.class);
+		return context.getBean(EncryptDecryptPassword.class).Decrypt(this.password);
 	}
-	public String getEncryptedPassword() {
-		EncryptDecryptPassword obj = new EncryptDecryptPassword();
-		return obj.Encrypt(this.password);
-	}
+	
 	
 
 }

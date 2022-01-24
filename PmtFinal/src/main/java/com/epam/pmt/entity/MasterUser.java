@@ -11,20 +11,21 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import org.springframework.stereotype.Component;
+
 @Entity
 @Table(name = "Master_User_Details")
+@Component
 public class MasterUser {
-
+	
 
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "ID")
-
 	private int userid;
 
 	@OneToMany(mappedBy = "masterUser",fetch = FetchType.LAZY)
-
 	private List<Account> account;
 
 
@@ -89,6 +90,3 @@ public class MasterUser {
 }
 
 
-//@TableGenerator(name="TABLE_Master",table="T_GENERATOR",pkColumnName="GEN_KEY",pkColumnValue="TEST",valueColumnName="GEN_VALUE",initialValue=1,allocationSize=1)
-//@GeneratedValue(strategy=GenerationType.TABLE, generator="TABLE_Master")
-//@JoinTable(name = "MASTER_ACCOUNT_ID")
