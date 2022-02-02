@@ -42,6 +42,7 @@ public class JDBC_Singleton_Design_Pattern {
 		} catch (Exception e) {
 			System.out.println(e);
 		}
+		
 
 	}
 

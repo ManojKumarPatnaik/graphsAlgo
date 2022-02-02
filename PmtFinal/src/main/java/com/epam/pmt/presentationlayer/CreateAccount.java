@@ -33,21 +33,21 @@ public class CreateAccount implements CreateAccountInterface {
 
 	@SuppressWarnings("resource")
 	public void accountService() {
+		String url;
+		String userName;
+		String password;
 		Scanner scanner = new Scanner(System.in);
 		ApplicationContext context=new AnnotationConfigApplicationContext(Main.class);
-		String url;
 		do {
 			System.out.println("Enter a valid urL");
 			url = scanner.next();
 		} while (!validateUrl.isValidURL(url));
 
-		String userName;
 
 		do {
 			System.out.println("Enter User name");
 			userName = scanner.next();
 		} while (!validateUserName.isValidUserName(userName));
-		String password;
 		do {
 			System.out.println("Enter a valid password");
 			password = scanner.next();
@@ -55,7 +55,7 @@ public class CreateAccount implements CreateAccountInterface {
 		System.out.println("Enter group");
 		String group = scanner.next();
 		String encrypt = encryptDecryptPassword.Encrypt(password);
-		account=context.getBean(Account.class);
+		 account=context.getBean(Account.class);
 		account.setGroup(group);
 		account.setPassword(encrypt);
 		account.setUrl(url);

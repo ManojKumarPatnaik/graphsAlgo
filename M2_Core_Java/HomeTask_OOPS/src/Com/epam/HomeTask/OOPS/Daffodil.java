@@ -14,7 +14,7 @@ public class Daffodil extends Flower {
     }
 
     public double getPrice() {
-        // TODO Auto-generated method stub
+       
         return price;
     }
 }

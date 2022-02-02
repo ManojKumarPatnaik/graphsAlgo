@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Configuration;
 import com.epam.pmt.presentationlayer.DisplayMenuDetails;
 
 @Configuration
-@ComponentScan(basePackages = {"com.epam.pmt","com.epam.pmt.presentationlayer"," com.epam.pmt.encryptdecryptpassword",} )
+@ComponentScan(basePackages = {"com.epam.pmt"} )
 public class Main {
 	private static final Logger logger = LogManager.getLogger(Main.class);
 
