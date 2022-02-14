@@ -8,37 +8,61 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
 import org.apache.logging.log4j.LogManager;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.stereotype.Component;
 
-import com.epam.pmt.databaselayer.AccountDataBase;
 import com.epam.pmt.entity.MasterUser;
+import com.epam.pmt.exceptions.AccountDoesNotExistException;
 import com.epam.pmt.exceptions.PasswordMismatchException;
-import com.epam.pmt.interfaceimplemetation.DeleteAccountByGroupName;
-import com.epam.pmt.interfaceimplemetation.DeleteAccountByUrl;
-import com.epam.pmt.interfaceimplemetation.ListPasswordAccountAndGroup;
-import com.epam.pmt.interfaceimplemetation.ModifyGroupDetails;
-import com.epam.pmt.interfaceimplemetation.ModifyPassword;
-import com.epam.pmt.interfaceimplemetation.ModifyUrl;
-import com.epam.pmt.interfaceimplemetation.ReadingPassword;
-import com.epam.pmt.interfaces.CreateAccountInterface;
-import com.epam.pmt.interfaces.ListPasswordAccountInterface;
-import com.epam.pmt.interfaces.ReadPasswordInterface;
+import com.epam.pmt.exceptions.WrongPasswordException;
 import com.epam.pmt.mainapp.Main;
 import com.epam.pmt.persistencemanager.CrudOperations;
+import com.epam.pmt.servicelayer.DeleteAccountByGroupName;
+import com.epam.pmt.servicelayer.DeleteAccountByUrl;
+import com.epam.pmt.servicelayer.ListPasswordAccountAndGroup;
+import com.epam.pmt.servicelayer.ModifyGroupDetails;
+import com.epam.pmt.servicelayer.ModifyPassword;
+import com.epam.pmt.servicelayer.ModifyUrl;
+import com.epam.pmt.servicelayer.ReadPassword;
 import com.epam.pmt.validation.ValidateUserName;
 import com.epam.pmt.validation.ValidationPassword;
-
+@Component
 public class DisplayMenuDetails {
 	private static final org.apache.logging.log4j.Logger logger = LogManager.getLogger(Main.class);
+	private static final Scanner scanner = new Scanner(System.in);
 	public static EntityManagerFactory emFactory = Persistence.createEntityManagerFactory("my-mysql-unit");
 	public static EntityManager emanager=emFactory.createEntityManager();
-
-	public static void ui() throws NullPointerException, PasswordMismatchException {
+	@Autowired
+	ValidateUserName validateUserName;
+	@Autowired
+	ValidationPassword validationPassword;
+	@Autowired
+	CrudOperations crud;
+	@Autowired
+	CreateAccount create;
+	@Autowired
+	ReadPassword readPassword;
+	@Autowired
+	ListPasswordAccountAndGroup listPasswordAccountAndGroup;
+	@Autowired
+	DeleteAccountByUrl deleteAccountByUrl;
+	@Autowired
+	ModifyPassword modifyPassword;
+	@Autowired
+	ModifyUrl modifyUrl;
+	@Autowired
+	ModifyGroupDetails modifyGroupDetails;
+	@Autowired
+	DeleteAccountByGroupName deleteAccountByGroupName;
+	
+	public  void ui() throws NullPointerException, PasswordMismatchException {
+		@SuppressWarnings("resource")
+		ApplicationContext context=new AnnotationConfigApplicationContext(Main.class);
 		
 		try {
-			@SuppressWarnings("resource")
-			Scanner scanner = new Scanner(System.in);
-			AccountDataBase data = new AccountDataBase();
-			MasterUser master = new MasterUser();
+			MasterUser masterUser= context.getBean(MasterUser.class);
 			while (true) {
 				logger.info("Enter number for Respective Operation");
 				logger.info("1.Register as master User");
@@ -48,14 +72,13 @@ public class DisplayMenuDetails {
 				switch (option) {
 				case 1:
 					String username1;
-					ValidateUserName validateUserName = new ValidateUserName();
 
 					do {
 						System.out.println("Enter Master User Name ");
 						username1 = scanner.next();
 					} while (!validateUserName.isValidUserName(username1));
 
-					master.setUsername(username1);
+					masterUser.setUsername(username1);
 
 					logger.info("Enter MasterPassword ");
 					logger.info("note  : password must be encountered with 1 upper case ");
@@ -64,13 +87,13 @@ public class DisplayMenuDetails {
 
 					String password = scanner.next();
 
-					if (new ValidationPassword().validPassword(password) == true) {
+					if (validationPassword.validPassword(password) == true) {
 						logger.debug("Validating Password Criteria : Access Granted.");
-						master.setPassword(password);
+						masterUser.setPassword(password);
 						logger.debug("Registered successfully");
 					}
 					emanager.getTransaction().begin();
-					emanager.persist(master);
+					emanager.persist(masterUser);
 					emanager.getTransaction().commit();
 					break;
 
@@ -83,9 +106,11 @@ public class DisplayMenuDetails {
 					logger.info("User Name " + username2 + " Password");
 					
 
-					if (username2.equals(master.getUsername())) {
-						if (password2.equals(master.getPassword())) {
-							new CrudOperations().getAllUsers().stream().filter(account->account.getUsername().equals(username2)&&account.getPassword().equals(password2))
+//					if (username2.equals(master.getUsername())) {
+//						if (password2.equals(master.getPassword())) {
+					if(validateUserName.isValidUserName(username2)==true) {
+						if(validationPassword.validPassword(password2) == true) {
+							crud.getAllUsers().stream().filter(account->account.getUsername().equals(username2)&&account.getPassword().equals(password2))
 							.collect(Collectors.toList()).get(0);
 							logger.info("Logined successfully");
 							int option2;
@@ -107,29 +132,25 @@ public class DisplayMenuDetails {
 									if ((option2 < 8)) {
 										switch (option2) {
 										case 1:
-											CreateAccountInterface create = new CreateAccount();
-											create.accountService(data);
+											create.accountService();
 											
 											break;
 										case 2:
-											ReadPasswordInterface readingPassword = new ReadingPassword();
 											System.out.println("Enter account url");
 											String accountUrl = scanner.next();
 											System.out.println("Enter user name");
 											String accountUsername = scanner.next();
-											(readingPassword).getPassword(data, accountUrl, accountUsername);
+											readPassword.getPassword( accountUrl, accountUsername);
 											break;
 										case 3:
-											ListPasswordAccountInterface listPasswordAccountAndGroup = new ListPasswordAccountAndGroup();
 											System.out.println("Enter group:");
 											String group = scanner.next();
-											listPasswordAccountAndGroup.getAccountByGroupName(data, group);
+											listPasswordAccountAndGroup.getAccountByGroupName(group);
 											break;
 										case 4:
-											DeleteAccountByUrl deleteAccountByUrl = new DeleteAccountByUrl();
 											System.out.println("Enter Account Url to delete password account");
 											String url = scanner.next();
-											deleteAccountByUrl.deleteAccountByUrl(data, url);
+											deleteAccountByUrl.deleteAccountByUrl( url);
 											break;
 										case 5:
 											int option5;
@@ -144,59 +165,64 @@ public class DisplayMenuDetails {
 													String url1 = scanner.next();
 													System.out.println("Enter the new Password");
 													String newpassword = scanner.next();
-													ModifyPassword modifyPassword = new ModifyPassword();
-													modifyPassword.modifyPassword(data, url1, newpassword);
+													modifyPassword.modifyPassword( url1, newpassword);
 												} else if (option5 == 2) {
 													System.out.println("Enter url");
 													String url1 = scanner.next();
 													System.out.println("Enter new url");
 													String newUrl1 = scanner.next();
-													ModifyUrl modifyUrl = new ModifyUrl();
-													modifyUrl.modifyUrl(data, url1, newUrl1);
+													modifyUrl.modifyUrl( url1, newUrl1);
 												} else {
 													break;
 												}
 											} while (option5 != 3);
 											break;
 										case 6:
-											ModifyGroupDetails modifyGroupDetails = new ModifyGroupDetails();
 											System.out.println("Enter old group name ");
 											String group1 = scanner.next();
 											System.out.println("Enter new group name ");
 											String newGroup = scanner.next();
-											modifyGroupDetails.modifyGroupDetails(data, group1, newGroup);
+											modifyGroupDetails.modifyGroupDetails( group1, newGroup);
 											break;
 										case 7:
-											DeleteAccountByGroupName deleteAccountByGroupName = new DeleteAccountByGroupName();
 											System.out.println("Enter old group name ");
 											String groupName = scanner.next();
-											deleteAccountByGroupName.deleteAccountByGroup(data, groupName);
+											deleteAccountByGroupName.deleteAccountByGroup( groupName);
 											break;
 
 										}
 									}
 
 								} while (!(option2 == 8));
-							} catch (Exception e) {
-								logger.warn("Invalid type..." + e);
+							} catch (Exception message) {
+								logger.warn("Invalid option.");
 							}
 
-						} else
+						} else {
 							logger.warn("Invalid Password");
-					} else
+							throw new WrongPasswordException("Oops! Password does not matched!!");
+						}
+					} else {
 						logger.warn("Invalid username");
+						throw new  AccountDoesNotExistException("Oops! No Account Found!!");
+					}
+					
 					break;
 				}
 
-				if (option == 3)
+				if (option == 3) {
+					logger.warn("Thank you for using Password Management Tool. Have a Great day!!!\n ");
+					
+				System.out.println("Exited Successfully from application");
 					break;
+				}
 
 			}
-			logger.debug("Exited Successfully from application");
 		}
 
-		catch (Exception e) {
-			logger.warn("Invalid type...");
+		catch (Exception message) {
+			logger.warn("Thank you for using Password Management Tool. Have a Great day!!!\n ");
+			System.out.println("Exited Successfully from application");
 		}
 	}
 

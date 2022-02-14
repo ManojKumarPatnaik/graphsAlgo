@@ -10,22 +10,22 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.persistence.TableGenerator;
+
+import org.springframework.stereotype.Component;
 
 @Entity
 @Table(name = "Master_User_Details")
+@Component
 public class MasterUser {
-
+	
 
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "ID")
-
 	private int userid;
 
 	@OneToMany(mappedBy = "masterUser",fetch = FetchType.LAZY)
-
 	private List<Account> account;
 
 
@@ -72,6 +72,17 @@ public class MasterUser {
 	public String getPassword() {
 		return password;
 	}
+	@Override
+	public String toString() {
+		return "MasterUser [userid=" + userid +  ", username=" + username + ", password="
+				+ password + "]";
+	}
+
+	public MasterUser(String username, String password) {
+		super();
+		this.username = username;
+		this.password = password;
+	}
 
 	public void setPassword(String password) {
 		this.password = password;
@@ -79,6 +90,3 @@ public class MasterUser {
 }
 
 
-//@TableGenerator(name="TABLE_Master",table="T_GENERATOR",pkColumnName="GEN_KEY",pkColumnValue="TEST",valueColumnName="GEN_VALUE",initialValue=1,allocationSize=1)
-//@GeneratedValue(strategy=GenerationType.TABLE, generator="TABLE_Master")
-//@JoinTable(name = "MASTER_ACCOUNT_ID")

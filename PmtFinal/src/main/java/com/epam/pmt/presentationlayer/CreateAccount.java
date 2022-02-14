@@ -2,54 +2,66 @@ package com.epam.pmt.presentationlayer;
 
 import java.util.Scanner;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.stereotype.Component;
 
-import com.epam.pmt.databaselayer.AccountDataBase;
+import com.epam.pmt.encryptdecryptpassword.EncryptDecryptPassword;
 import com.epam.pmt.entity.Account;
-import com.epam.pmt.interfaceimplemetation.CreateAccountDetails;
-import com.epam.pmt.interfaces.CreateAccountInterface;
+import com.epam.pmt.mainapp.Main;
+import com.epam.pmt.servicelayer.CreateAccountDetails;
+import com.epam.pmt.servicelayer.CreateAccountInterface;
 import com.epam.pmt.validation.ValidateUserName;
 import com.epam.pmt.validation.ValidationPassword;
 import com.epam.pmt.validation.ValidationUrl;
 
+@Component
 public class CreateAccount implements CreateAccountInterface {
-//	public static EntityManagerFactory emFactory = Persistence.createEntityManagerFactory("my-mysql-unit");
-//	private static EntityManager emanager=emFactory.createEntityManager();
+	@Autowired
+	ValidationUrl validateUrl;
+	@Autowired
+	ValidateUserName validateUserName;
+	@Autowired
+	ValidationPassword validationPassword;
+	@Autowired
+	CreateAccountDetails createAccountDetails;
+	@Autowired
+	EncryptDecryptPassword encryptDecryptPassword;
+	@Autowired
+	Account account;
 
-	public void accountService(AccountDataBase data) {
-		@SuppressWarnings("resource")
-		Scanner scanner = new Scanner(System.in);
-		ValidationUrl validateUrl = new ValidationUrl();
-		
+	@SuppressWarnings("resource")
+	public void accountService() {
 		String url;
+		String userName;
+		String password;
+		Scanner scanner = new Scanner(System.in);
+		ApplicationContext context=new AnnotationConfigApplicationContext(Main.class);
 		do {
 			System.out.println("Enter a valid urL");
 			url = scanner.next();
 		} while (!validateUrl.isValidURL(url));
 
-		String userName;
-		ValidateUserName validateUserName = new ValidateUserName();
 
 		do {
 			System.out.println("Enter User name");
 			userName = scanner.next();
 		} while (!validateUserName.isValidUserName(userName));
-		ValidationPassword validationPassword = new ValidationPassword();
-		String password;
 		do {
 			System.out.println("Enter a valid password");
 			password = scanner.next();
 		} while (!validationPassword.validPassword(password));
 		System.out.println("Enter group");
 		String group = scanner.next();
-		Account account = new Account(url, userName, password, group);
-		CreateAccountDetails createAccountService=new CreateAccountDetails();
-		createAccountService.add(account);
-//		emanager.getTransaction().begin();
-//		emanager.persist(account);
-//		emanager.getTransaction().commit();
+		String encrypt = encryptDecryptPassword.Encrypt(password);
+		 account=context.getBean(Account.class);
+		account.setGroup(group);
+		account.setPassword(encrypt);
+		account.setUrl(url);
+		account.setUsername(userName);
+		
+		createAccountDetails.add(account);
 		System.out.println("Account added successfully");
 
 	}
