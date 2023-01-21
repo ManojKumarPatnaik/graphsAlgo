@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane blendMode="SCREEN" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Pane prefHeight="129.0" prefWidth="700.0" style="-fx-background-color: #ded;">
+         <effect>
+            <Lighting diffuseConstant="0.76" light="$null" specularConstant="0.71" specularExponent="6.19">
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+            </Lighting>
+         </effect>
+         <children>
+            <Button layoutX="14.0" layoutY="88.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="115.0" text="Name" />
+         </children></Pane>
+   </children>
+</AnchorPane>

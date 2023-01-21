@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="700.0" style="-fx-background-color: #29434e;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.DetailsController">
+   <children>
+      <Label fx:id="detailsWelcomeLabel" alignment="CENTER" layoutX="468.0" layoutY="14.0" prefHeight="22.0" prefWidth="218.0" text="Welcome..." textFill="#fffdfd">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Label>
+      <AnchorPane layoutX="31.0" layoutY="86.0" prefHeight="145.0" prefWidth="639.0" style="-fx-background-color: #fff;">
+         <effect>
+            <DropShadow />
+         </effect>
+         <children>
+            <ImageView fitHeight="132.0" fitWidth="142.0" layoutX="7.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/paulo-circular-profile.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="detailsName" layoutX="201.0" layoutY="35.0" prefHeight="32.0" prefWidth="356.0" text="Name:" textFill="#686464" />
+            <Label fx:id="detailsAgeId" layoutX="201.0" layoutY="67.0" prefHeight="32.0" prefWidth="171.0" text="Age:" textFill="#686464" />
+            <Label fx:id="detailsProfession" layoutX="201.0" layoutY="99.0" prefHeight="32.0" prefWidth="395.0" text="Profession:" textFill="#686464" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="209.0" layoutY="241.0" prefHeight="145.0" prefWidth="462.0" style="-fx-background-color: #fff;">
+         <effect>
+            <DropShadow />
+         </effect>
+         <children>
+            <AnchorPane layoutY="-2.0" prefHeight="42.0" prefWidth="462.0" style="-fx-background-color: #546e7a;">
+               <children>
+                  <Label alignment="CENTER" layoutX="82.0" layoutY="10.0" prefHeight="17.0" prefWidth="299.0" text="How to Find Me" textFill="#f5efef">
+                     <font>
+                        <Font name="System Italic" size="18.0" />
+                     </font>
+                     <effect>
+                        <Blend />
+                     </effect>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="22.0" layoutY="54.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/icon_web.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="22.0" layoutY="87.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/icon_twitter.png" />
+               </image>
+            </ImageView>
+            <Hyperlink fx:id="detailsWeb" layoutX="51.0" layoutY="54.0" prefHeight="25.0" prefWidth="329.0" text="www.buildappswithpaulo.com" />
+            <Hyperlink fx:id="detailsTwitter" layoutX="51.0" layoutY="87.0" prefHeight="25.0" prefWidth="314.0" text="\@buildappswithme" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <AnchorPane prefHeight="156.0" prefWidth="700.0" style="-fx-background-color: #bed;">
+         <children>
+            <TextField layoutX="496.0" layoutY="14.0" prefHeight="27.0" prefWidth="190.0" style="-fx-background-color: #ced;">
+               <cursor>
+                  <Cursor fx:constant="CROSSHAIR" />
+               </cursor>
+            </TextField>
+            <Label layoutX="62.0" layoutY="27.0" prefHeight="29.0" prefWidth="130.0" text="BWAP" textFill="WHITE" textOverrun="WORD_ELLIPSIS">
+               <font>
+                  <Font name="Futura Bold" size="18.0" />
+               </font>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </Label>
+            <ImageView fitHeight="29.0" fitWidth="43.0" layoutX="14.0" layoutY="134.0" pickOnBounds="true" preserveRatio="true" />
+            <JFXPasswordField layoutX="192.0" layoutY="56.0" prefHeight="25.0" prefWidth="176.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="158.0" layoutY="109.0" prefHeight="156.0" prefWidth="409.0" style="-fx-background-color: #fff;">
+         <effect>
+            <DropShadow />
+         </effect>
+         <children>
+            <Label layoutX="14.0" layoutY="21.0" prefHeight="17.0" prefWidth="79.0" text="Message" textAlignment="CENTER" textFill="#1bb280">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+         </children></AnchorPane>
+      <AnchorPane layoutX="158.0" layoutY="275.0" prefHeight="156.0" prefWidth="242.0" style="-fx-background-color: #fff;">
+         <effect>
+            <DropShadow />
+         </effect>
+      </AnchorPane>
+      <AnchorPane layoutX="8.0" layoutY="165.0" prefHeight="271.0" prefWidth="139.0" />
+   </children>
+</Pane>

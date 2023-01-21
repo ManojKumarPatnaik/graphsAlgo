@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="rootAnchorPane"
+            prefHeight="80.0" prefWidth="300.0" style="-fx-background-color: #424242;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ImageView fx:id="iconImageView" fitHeight="41.0" fitWidth="50.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@assets/icon.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="task" layoutX="55.0" layoutY="14.0" prefHeight="17.0" prefWidth="237.0" text="Task Name" textFill="#ebe5e5" />
+      <Label fx:id="dateCreated" layoutX="189.0" layoutY="58.0" prefHeight="17.0" prefWidth="80.0" text="Date Created" textFill="#bc4854" />
+      <JFXButton fx:id="deleteButton" layoutX="211.0" layoutY="7.0" text="Delete" textFill="#fffdfd" />
+      <Label fx:id="description" layoutX="55.0" layoutY="31.0" prefHeight="34.0" prefWidth="237.0" text="Description" textFill="#ebe8e8" />
+   </children>
+</AnchorPane>

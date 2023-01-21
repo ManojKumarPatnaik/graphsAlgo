@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="AnnotationIntro/AnnotationIntro/src"/>
+	<classpathentry kind="src" path="AutoBoxing/AutoBoxing/src"/>
+	<classpathentry kind="src" path="BuildFirstBootStrap/BuildFirstBootStrap/src/main/java"/>
+	<classpathentry kind="src" path="BuildFirstBootStrap/BuildFirstBootStrap/src/test/java"/>
+	<classpathentry kind="src" path="ButtonSwing/ButtonSwing/src"/>
+	<classpathentry kind="src" path="CheckBoxes/CheckBoxes/src"/>
+	<classpathentry kind="src" path="Composition/Composition/src"/>
+	<classpathentry kind="src" path="contacts/contacts/src/main/java"/>
+	<classpathentry kind="src" path="CustomListview/CustomListview/src"/>
+	<classpathentry kind="src" path="Exploring/Exploring/src"/>
+	<classpathentry kind="src" path="FlashCard/FlashCard/src"/>
+	<classpathentry kind="src" path="HelloFX-Test/HelloFX-Test/src"/>
+	<classpathentry kind="src" path="HelloJavaFX/HelloJavaFX/src"/>
+	<classpathentry kind="src" path="InnerClassesReal/InnerClassesReal/src"/>
+	<classpathentry kind="src" path="InterfaceClass/InterfaceClass/src"/>
+	<classpathentry kind="src" path="IntroEnums/IntroEnums/src"/>
+	<classpathentry kind="src" path="IntroGenericsJava/IntroGenericsJava/src"/>
+	<classpathentry kind="src" path="IntroSceneBuilder/IntroSceneBuilder/src"/>
+	<classpathentry kind="src" path="IntroSwing/IntroSwing/src"/>
+	<classpathentry kind="src" path="IntroThreads/IntroThreads/src"/>
+	<classpathentry kind="src" path="IntroToLambdas/IntroToLambdas/src"/>
+	<classpathentry kind="src" path="IOFileWrite/IOFileWrite/src"/>
+	<classpathentry kind="src" path="IOStreamsProject/IOStreamsProject/src"/>
+	<classpathentry kind="src" path="JavaCourse-Project-Files/Animals/src"/>
+	<classpathentry kind="src" path="JavaCourse-Project-Files/ButtonSwing/src"/>
+	<classpathentry kind="src" path="JavaCourse-Project-Files/ControlStatements/src"/>
+	<classpathentry kind="src" path="JavaCourse-Project-Files/ErrorHandlingProject/src"/>
+	<classpathentry kind="src" path="JavaCourse-Project-Files/FlashCard/src"/>
+	<classpathentry kind="src" path="JavaCourse-Project-Files/FlashCards/src"/>
+	<classpathentry kind="src" path="JavaCourse-Project-Files/HashMapsProject/src"/>
+	<classpathentry kind="src" path="JavaCourse-Project-Files/HellloWorld/src"/>
+	<classpathentry kind="src" path="JavaCourse-Project-Files/InterfaceClass/src"/>
+	<classpathentry kind="src" path="JavaCourse-Project-Files/IntroClasses/src"/>
+	<classpathentry kind="src" path="JavaCourse-Project-Files/IntroSwing/src"/>
+	<classpathentry kind="src" path="JavaCourse-Project-Files/IOFileWrite/src"/>
+	<classpathentry kind="src" path="JavaCourse-Project-Files/IOStreamsProject/src"/>
+	<classpathentry kind="src" path="JavaCourse-Project-Files/JavaArrayLists/src"/>
+	<classpathentry kind="src" path="JavaCourse-Project-Files/JavaArrays/src"/>
+	<classpathentry kind="src" path="JavaCourse-Project-Files/JavaOps/src"/>
+	<classpathentry kind="src" path="JavaCourse-Project-Files/Loops/src"/>
+	<classpathentry kind="src" path="JavaCourse-Project-Files/MetersToFeet/src"/>
+	<classpathentry kind="src" path="JavaCourse-Project-Files/Methods/src"/>
+	<classpathentry kind="src" path="JavaCourse-Project-Files/StaticProject/src"/>
+	<classpathentry kind="src" path="JavaCourse-Project-Files/TextFieldProject/src"/>
+	<classpathentry kind="src" path="JavaFXDesign/JavaFXDesign/src"/>
+	<classpathentry kind="src" path="LifeCycle/LifeCycle/src"/>
+	<classpathentry kind="src" path="LoginDatabase/LoginDatabase/src"/>
+	<classpathentry kind="src" path="LoginScreen/LoginScreen/src"/>
+	<classpathentry kind="src" path="LoginTestProject/LoginTestProject/src"/>
+	<classpathentry kind="src" path="Mysql Scripts/Mysql Scripts/mysql-connector-java-5.1.43/src"/>
+	<classpathentry kind="src" path="Polymorphism/Polymorphism/src"/>
+	<classpathentry kind="src" path="SetAndHashset/SetAndHashset/src"/>
+	<classpathentry kind="src" path="testVaadinApp/testVaadinApp/src/main/java"/>
+	<classpathentry kind="src" path="ThreadSynch/ThreadSynch/src"/>
+	<classpathentry kind="src" path="vaadindemo/vaadindemo/src/main/java"/>
+	<classpathentry kind="src" path="WeatherApp/WeatherApp/src/main/java"/>
+	<classpathentry kind="src" path="WeatherApp/WeatherApp/src/test/java"/>
+	<classpathentry kind="lib" path="BuildFirstBootStrap/__MACOSX/BuildFirstBootStrap/.mvn/wrapper/._maven-wrapper.jar"/>
+	<classpathentry kind="lib" path="BuildFirstBootStrap/BuildFirstBootStrap/.mvn/wrapper/maven-wrapper.jar"/>
+	<classpathentry kind="lib" path="contacts/contacts/target/contacts-1.0-SNAPSHOT/WEB-INF/lib/atmosphere-runtime-2.4.11.vaadin2.jar"/>
+	<classpathentry kind="lib" path="contacts/contacts/target/contacts-1.0-SNAPSHOT/WEB-INF/lib/flute-1.3.0.gg2.jar"/>
+	<classpathentry kind="lib" path="contacts/contacts/target/contacts-1.0-SNAPSHOT/WEB-INF/lib/gentyref-1.2.0.vaadin1.jar"/>
+	<classpathentry kind="lib" path="contacts/contacts/target/contacts-1.0-SNAPSHOT/WEB-INF/lib/jsoup-1.8.3.jar"/>
+	<classpathentry kind="lib" path="contacts/contacts/target/contacts-1.0-SNAPSHOT/WEB-INF/lib/sac-1.3.jar"/>
+	<classpathentry kind="lib" path="contacts/contacts/target/contacts-1.0-SNAPSHOT/WEB-INF/lib/vaadin-client-compiled-8.1.3.jar"/>
+	<classpathentry kind="lib" path="contacts/contacts/target/contacts-1.0-SNAPSHOT/WEB-INF/lib/vaadin-push-8.1.3.jar"/>
+	<classpathentry kind="lib" path="contacts/contacts/target/contacts-1.0-SNAPSHOT/WEB-INF/lib/vaadin-sass-compiler-0.9.13.jar"/>
+	<classpathentry kind="lib" path="contacts/contacts/target/contacts-1.0-SNAPSHOT/WEB-INF/lib/vaadin-server-8.1.3.jar"/>
+	<classpathentry kind="lib" path="contacts/contacts/target/contacts-1.0-SNAPSHOT/WEB-INF/lib/vaadin-shared-8.1.3.jar"/>
+	<classpathentry kind="lib" path="contacts/contacts/target/contacts-1.0-SNAPSHOT/WEB-INF/lib/vaadin-slf4j-jdk14-1.6.1.jar"/>
+	<classpathentry kind="lib" path="contacts/contacts/target/contacts-1.0-SNAPSHOT/WEB-INF/lib/vaadin-themes-8.1.3.jar"/>
+	<classpathentry kind="lib" path="Mysql Scripts/__MACOSX/Mysql Scripts/mysql-connector-java-5.1.43/._mysql-connector-java-5.1.43-bin.jar"/>
+	<classpathentry kind="lib" path="Mysql Scripts/__MACOSX/Mysql Scripts/mysql-connector-java-5.1.43/src/lib/._c3p0-0.9.1-pre6.jar"/>
+	<classpathentry kind="lib" path="Mysql Scripts/__MACOSX/Mysql Scripts/mysql-connector-java-5.1.43/src/lib/._jboss-common-jdbc-wrapper-src.jar"/>
+	<classpathentry kind="lib" path="Mysql Scripts/__MACOSX/Mysql Scripts/mysql-connector-java-5.1.43/src/lib/._jboss-common-jdbc-wrapper.jar"/>
+	<classpathentry kind="lib" path="Mysql Scripts/__MACOSX/Mysql Scripts/mysql-connector-java-5.1.43/src/lib/._slf4j-api-1.6.1.jar"/>
+	<classpathentry kind="lib" path="Mysql Scripts/Mysql Scripts/mysql-connector-java-5.1.43/mysql-connector-java-5.1.43-bin.jar"/>
+	<classpathentry kind="lib" path="WeatherApp/WeatherApp/.mvn/wrapper/maven-wrapper.jar"/>
+	<classpathentry kind="output" path="AnnotationIntro/AnnotationIntro/out/production/AnnotationIntro"/>
+</classpath>
